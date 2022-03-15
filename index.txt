@@ -1,0 +1,2 @@
+Programs: a set of instructions for a computer.
+Import is an important keyword in programing which means bringing a set of instructions from somewhere.
