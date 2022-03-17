@@ -1,2 +1,10 @@
 Programs: a set of instructions for a computer.
 Import is an important keyword in programing which means bringing a set of instructions from somewhere.
+
+Variables 15.03.2021
+Variable-memory data storage. Think it as some sort of labeled container in the computers memory.
+Name errors occurs when a Variable has not be defined.
+data that can be assigned to a variable can also be called a data object.
+An integer is a whole number with no fraction or decimal part. Integers can be positive, zero, or negative (like -5).
+Lists in python are writen in square brackets. like an array in js.
+Modules: collection of useful code that can be used in other python programs. (So that other developers don not have to type the same instructions over and over)
