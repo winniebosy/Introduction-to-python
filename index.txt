@@ -8,3 +8,31 @@ data that can be assigned to a variable can also be called a data object.
 An integer is a whole number with no fraction or decimal part. Integers can be positive, zero, or negative (like -5).
 Lists in python are writen in square brackets. like an array in js.
 Modules: collection of useful code that can be used in other python programs. (So that other developers don not have to type the same instructions over and over)
+Import (keyword)- importing specifc modules ,to access the code.
+. In Python, a comment line begins with #.
+Loops in python, what matters is the number of things that are in the list.
+for side in [1, 2, 3, 4, 5]:
+    amy.forward(100)
+    amy.right(72)
+
+    the mehtods above must be indented so as to ensure that they are inside the loop
+    In Python, a list of items is written with square brackets around it, and commas separating the items.
+
+The first line of the loop
+The key idea behind all of this is that a for loop has a special variable built into the first line of the loop. In these examples, the variable is called length.
+
+for length in [10, 20, 30, 40, 50, 60]:
+And each time the first line of the loop runs, one of the items from the list gets assigned to that variable.
+
+After the value has been assigned in that first line, the code inside the loop gets run.
+
+An important concept to understand is that this assignment happens in the first line of the for loop—but after that first line, we can assign a different value to the variable if we want to (using a regular assignment statement).
+
+
+
+for line in [1, 2, 3]:
+Remember, the first line of a for loop comes with a special sort of variable. We say it's a "special" variable because of the fact that each time the loop runs, the variable gets assigned the next value from the list. You don't see any assignment statements, but that's how for loops work.
+
+In this case, the variable has the name line, and it gets assigned one of the numbers from the list [1, 2, 3]. The first time the loop runs, line will get assigned the value 1, the second time, it will get assigned the value 2, and the last time it will get assigned the value 3.
+
+Hm, that sounds an awful lot like what we want to do with the turtle's colors!
