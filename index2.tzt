@@ -1,0 +1,124 @@
+Statements in Python
+A statement is a piece of ocde that provides a complete instruction for some action that python will carry out.
+- CLassification of Pyhton Statements:
+   -Simple Statements eg import or assignemet statements
+   -Compund Statements- Statements that contain other statements. eg compound statements. Used to control whetehr the code runs, when the code runs
+          and how may times the code runs.
+-Control flow: the order in which statements are executed in a pience of code.
+
+
+The Range Function
+range is a powerful function in py. Used to proive a range of numbers. Example
+  
+  for side in [0, 1, 2, 3]:
+    amy.forward(100)
+    amy.left(90)
+We can replace the list like this:
+
+for side in range(4):
+    amy.forward(100)
+    amy.left(90)
+
+
+CRUNCHING NUMBERS 
+
+An expression is a piece of code that resolves to some value. Within an expression, there are operators and operands.
+Operators indicate what operation is to be performed (such as addition or subtraction).
+Operands are the numbers (or other values) on which we want to perform the operations.
+
+
+Function
+A function is named block of code that doesn't run until we tell it to run.
+A function call is a statement that makes a function run; when we run a statement like this, we would say that we are "calling the function".
+An argument is a value that we can pass to a function when we call it.
+ 
+Method:
+-This is a function that is associated with a particular object
+-Subset of a function.
+-Methods can be used to give behaviors objects. eg amy.forward(100)
+- all methods are functions, but not all functions are methods.
+
+
+DEFINING functions
+ first line of function in python starts with def keyword, then name of the fucntion and parenthesis.
+
+ eg def spiral():
+
+ PARAMETERS AND ARGUMENTS
+pARAMETERS- FUNCTION DEFINIIONS. variable part of the function definition.
+ parameter isn't anything fancy—it's really just a variable. 
+Example of parameters: def spiral(sides, turn, color, width):
+Example of arguements: spiral(150, -30, "blue", 10)
+Arguments are just inputs
+An argument isn't anything fancy either—it's just some input that we pass to a function.
+
+When we call a function, we pass it some inputs (usually called arguments)—and these inputs get assigned to variables that are in the definition of that function (usually called parameters).
+
+
+FUNCTION SCOPE
+The scope of a variable is simply the part of the code for which that variable is defined.
+ variable that is defined inside a function can only be used inside of that function. We would say a variable like this has local scope or is a local variable.
+ In contrast, a variable that is defined outside of a function can be used anywhere in the file (both inside of functions and outside of functions). We would say a variable like this has global scope or is a global variable.
+
+ INDENTATION
+ ndent with care!
+Python uses the indentation of your code to determine its structure. For example, there's a big difference between these two blocks of code:
+
+for side in [25, 50, 25, 50]:
+    t.forward(side)
+    t.right(90)
+for side in [25, 50, 25, 50]:
+    t.forward(side)
+t.right(90)
+The difference is in whether the line t.right(90) is part of the loop or not. In the first case, it is; so the turtle will draw a rectangle. In the second case, it isn't; so the turtle will just keep going forward four times and only turn right at the very end.
+
+CONDITIONAL STATEMENTS IN Python
+A conditional statement is one that that tells Python to run some code only when a certain condition is true. We can use the if keyword to create a conditional statement, like this:
+
+if sides == 4:
+    bob.color("purple")
+The double equals sign == is called the equality operator. It compares two things to see if they are equal. Be careful not to confuse this with the asignment operator, which uses only a single equals sign =.
+
+
+This is called an if/else statement, and it's a variation on the if statement. The way it works is that the condition side == 1 is checked, and if it's true, then the code under the if line will run; but if the condition is false, the code under the else line will run instead.
+
+You can think of this as saying, "If side is 1, then set the color to blue; otherwise, set the color to yellow."
+
+You will see a lot of if/else statements as you continue coding.
+
+Example of an if..else statement 
+ import turtle
+jack = turtle.Turtle()
+jack.width(5)
+
+for side in range(4):
+    if side == 1:
+        jack.color("blue")
+    else:
+        jack.color("yellow")
+    jack.forward(100)
+    jack.right(90)
+
+    MODULO Operators
+    he modulo operator, %, divides one number by another—and then gives the remainder of that division.
+    -Used for repetitive parterns
+    -use it with an increasing sequence of numbers
+     Example of a modulor with if statements to draw a pentagon with three colors
+        import turtle
+
+t = turtle.Turtle()
+t.width(5)
+
+for n in range(12):
+    t.color("gray")
+    if n % 3 == 0:
+        t.color("red")
+    if n % 3 == 1:
+        t.color("orange")
+    if n % 3 == 2:
+        t.color("yellow")
+    t.forward(50)
+    t.right(360/12)
+
+
+    
