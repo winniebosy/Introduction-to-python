@@ -147,3 +147,76 @@ If the number is evenly divisible by both 3 and 5, you say "FizzBuzz"
 RANDOM MODULE
 a deterministic program is a program that always produces the same output when given the same in[until]
 
+random.choice (used in lists)
+Here's an example of using random.choice:
+
+color = random.choice(["red", "green", "blue"])
+To use the function, we simply call it and pass it a list—in this case, a list of colors. The function then returns a random item from the list. If we want to capture that returned value, we can assign it to a variable, like with color, above.
+
+
+
+random.randint
+randint stands for "random integer", because that's exactly what it does—it returns a random integer. Here's an example:
+
+die_roll = random.randint(1, 6)
+As you can see, the function takes two arguments: the lower and upper bounds. It will then return a number at random from within that range. The function call above will generate a random number from 1 through 6—just like rolling a six-sided die.
+
+
+
+
+
+Comparison operators
+You've been using the equality operator == with if statements, to do things like:
+
+if side == 2:
+    jack.color("blue")
+The == operator compares two things (to see if they are equal), so for that reason we would say it is an example of a comparison operator. And Python has several other comparison operators that we haven't yet used. Let's check them out:
+
+Operation	What it means
+a == b	Is a equal to b?
+a < b	Is a less than b?
+a > b	Is a greater than b?
+a <= b	Is a less than or equal to b?
+a >= b	Is a greater than or equal to b?
+a != b	Is a not equal to b?
+All of these can be used in an if statement.
+
+elif- tests to be link up as c ompound statement.
+if else- use when you wnat to test each and very statement independently.
+
+mood = "happy"
+
+import turtle
+riley = turtle.Turtle()
+riley.width(5)
+
+# Add your code here.
+if mood == "happy":
+    riley.color("yellow")
+elif mood == "sad":
+    riley.color("blue")
+else:
+    riley.color("gray")
+
+for side in range(5):
+    riley.forward(100)
+    riley.right(144)
+
+
+
+    using or negations in python
+
+    import turtle
+
+t = turtle.Turtle()
+t.color("lime")
+t.width(3)
+t.penup()
+t.shape("turtle")
+
+for step in range(2000):
+    t.forward(1)
+    # Add your code here
+    
+    if t.xcor() <-180 or t.xcor() >180:
+       t.right(180)
