@@ -220,3 +220,143 @@ for step in range(2000):
     
     if t.xcor() <-180 or t.xcor() >180:
        t.right(180)
+
+
+
+       SHELL
+A shell is simply the outermost layer of an operating system. It's designed to provide a way for you to interact with the tools and services that your operating system provides.
+The examples above are what we call graphical shells, where you interact with the operating system through things like windows and buttons. You may have heard this type of interface called a Graphical User Interface or GUI (pronounced "gooey").
+In contrast, this course is all about how to use your computer's text shell. Instead of clicking on buttons, you'll be entering text commands. This type of interface is called a Command-Line Interface or CLI.
+BASH
+We've been saying "the shell," but there isn't just one single shell that all systems use—there are a variety of shells out there, and different operating systems may use different shells.
+
+One of the most widely used shells is called BASH, and that's what we'll be using in this course. Mac and Linux computers use the BASH shell by default. Windows computers don't, but it's pretty easy to get one installed.
+
+
+Echo is used to display content in python just like console.log is used in js
+cd.. - go back to one directory
+ls- lists items in a directory
+ls.. lists the contents in the directory
+
+
+
+n the video, Karl mentioned the home directory. On your computer, the home directory is the current user's top-level directory. It's usually called something like:
+
+/Users/karl
+
+
+
+The directory you're currently inside.-working directory(use one dot)
+
+
+The directory immediately above your current directory.- parent directory 9use two dots)
+
+
+The current user's top-level directory (the directory that has all of that user's other directories inside of it).-home directory (~)
+
+You can use pwd to show the current working directory.
+
+ome shell commands support options or flags that can be used to turn on extra behavior or special features.
+
+We can add an option to a command by typing a hyphen followed by a particular letter. For example, when using the ls command, we can add the handy -l option, as in ls -l.
+
+
+To list items that end with a .txt:  ls *.txt
+To list items that start with a particular letter or name : ls bear*
+To list the size of a file - ls -l
+To find a lsit of items with similar middle name s- use ls *x*
+
+
+To move one file from one directory to another, you need to specify the directory you ae moving the file from to the final desitnation. eg 
+mv *.jpg Photos- this moves from the current directory to the photos directory.
+
+The curl command can be used to download a file from the Web. By default, it will download the file and display the contents in the terminal. For example:
+
+curl 'http://www.google.com'
+
+If you add the -L option to curl, it will first follow any redirects, and then download the file from wherever the redirects ultimately go. In other words, if you enter:
+
+
+if you want to view the contents of a particualr downloaded item on the intenrnet:
+ you use cat for contacteneate. eg cat dictonary.txt
+
+
+ The limitation is that files often have more text than will fit on the screen at once. When that's the case, you can use less, as in:
+
+less dictionary.txt
+
+rm and rmdir commands permanently delete files. So if you try these commands on your own computer please do be careful not to delete something important!
+
+
+If you want to delete multiple files or directories, you can simply list them after the command, with each one separated by a space. Like this:
+
+rmdir example1 example2 example3
+Also, notice how the shell uses a space to tell where one item ends and the next begins. If the name of a file or directory has a space in it, you'll need to put the whole name in single quotes. Like this:
+
+rmdir 'example 1'  'example 2'  'example 3'
+
+
+
+
+Permanently delete a file named example without double-checking.-rm example3
+
+
+Permanently delete a file named example, but double-check first. rm -i example
+
+
+Permanently delete a directory named example. rmdir example
+
+
+
+
+Lesson Recap
+You really have learned a lot in the lesson—in total, you learned how to:
+
+Open a terminal or Command-Line Interface (CLI)
+Use basic shell commands like echo
+Use variables in the shell
+Navigate directories (folders) using cd
+Use options with your shell commands
+Organize your files and directories with mkdir and mv
+Download files with curl
+View files using cat and less
+Remove files and directories with rm and rmdir
+You now have all the shell and command-line fundamentals you need to run programs, navigate your computer, and carry out all sorts of other tasks—all without having to touch your graphical user interface!
+
+
+
+Lesson Recap
+For your reference, here's a brief recap of the specific topics we covered in this lesson. If you followed along with everything, you now know how to:
+
+Open a terminal or Command-Line Interface (CLI)
+Use basic shell commands like echo
+Use variables in the shell
+Navigate directories (folders) using cd
+Use options with your shell commands
+Organize your files and directories with mkdir and mv
+Download files with curl
+View files using cat and less
+Remove files and directories with rm and rmdir
+
+
+
+
+RUNNING Python
+USE THe command winpty python to run python in windows environment
+When you see the >>> prompt like this, it means Python is currently running! While Python is running like this, you won't be able to enter Git Bash commands. To exit Python, you can type in exit() and press enter—and this will return you to Git Bash.
+reating an Alias
+Typing winpty over and over does work, but it can be a nuisance, so we recommend that you create something called an alias. That looks like this:
+
+alias python='winpty python'
+If you run this line in Git Bash, then for the rest of the current session (meaning, until you restart Git Bash), you will then be able to enter simply python and Git Bash will know that you really mean winpty python.
+
+Making a Permanent Alias
+If you want to avoid creating the alias every time you restart Git Bash, you can make the change permanent by running the following line in Git Bash:
+
+echo "alias python='winpty python.exe'" >> ~/.bashrc
+
+So the above line simply adds the line alias python='winpty python.exe' to the .bashrc file, which means that this command will get run (and the alias will be created) every time you open Git Bash.
+
+Once you have created this permanent alieas, you should be all set and be able to run Python as shown throughout the rest of the course.
+
+
