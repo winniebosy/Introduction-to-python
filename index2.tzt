@@ -120,5 +120,30 @@ for n in range(12):
     t.forward(50)
     t.right(360/12)
 
+return statement- any value inside a local variable.
 
-    
+
+ 
+A function definition can have any number of return statements, but it will stop after the first one. For example, we can write a function like this:
+
+def favorite_color():
+    return "green"
+    return "big scary monster"
+    return 42
+    return [1, "line", 2]
+
+
+Key concept: 
+When we call a function from inside a loop, we can use the loop variable as input for that function. This allows us to call the same function repeatedly, but pass it a different input each time.
+
+
+he rules
+Before you start coding, let's make sure the basic idea of Fizz Buzz is clear. You count up through a series of numbers (0, 1, 2, 3, 4, 5 ... ) and for each number:
+
+If the number is evenly divisible by 3, you say "Fizz"
+If the number is evenly divisible by 5, you say "Buzz"
+If the number is evenly divisible by both 3 and 5, you say "FizzBuzz"
+
+RANDOM MODULE
+a deterministic program is a program that always produces the same output when given the same in[until]
+
