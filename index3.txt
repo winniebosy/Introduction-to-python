@@ -1,0 +1,26 @@
+STRINGS AND LISTS
+
+if you a assign a string to a string in python, yiu get a syntax error that cannot assign literal
+Variable name is also known as identifier. eg sides-10- sides is identifier.
+Binds- sides-10; sides is bound to 10, amy is bound to turtle.
+literal- directly represent that data type.
+
+
+COMPLEX STRINGS
+Triple quotes """ used in the begging and end of very long STRINGS
+ingle quotes to surround the whole string
+The escape character \ to take care of the single quotes that are inside the string
+The newline character \n to break the story to multiple lines
+in summary, we can use the len function to find out how long a string is (i.e., how many characters the string has). We simply call the len function and pass it the string we want to check:
+
+>>> len("Python")
+6
+
+
+We can also use the len function on lists:
+
+>>> len([1, 2, 3])
+3
+
+
+
