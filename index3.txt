@@ -14,13 +14,72 @@ The newline character \n to break the story to multiple lines
 in summary, we can use the len function to find out how long a string is (i.e., how many characters the string has). We simply call the len function and pass it the string we want to check:
 
 >>> len("Python")
-6
+
 
 
 We can also use the len function on lists:
 
 >>> len([1, 2, 3])
 3
+
+
+n = n + 1
+The key thing to understand is that the code on the right side of the assignment operator, =, runs first. So Python first evaluates n + 1. We assigned n a value of 1, so n + 1 is equivalent to 1 + 1, or 2.
+
+It then assigns the 2 as the new value of n: wnere n=2
+
+
+Example of code on how to count character increments in python. The initial value will be outside the four loops
+count= 0
+for ch in "bonobos":
+    if ch == "o":
+        count = count + 1
+print(count)
+
+FINDING THE NUMBER OF CHARACTERS IN A PARTICUALR STRINGS
+def count_character(string, target):
+
+  count = 0
+
+  for ch in string :
+       if ch == target:
+         count = count + 1
+        
+  return count
+
+
+  Indexing
+We've seen that lists and strings have some things in common. Strings and lists both:
+
+Have a length.
+Are sequences.
+Can be looped over.
+
+Note that indexes start at 0, not 1. So the first item in a sequence would have an index of 0, while the second would have an index of 1, the third an index of 2, and so on.
+
+INDEXING IS USED TO ASSESS WHETHER A PARTICUALR STRING STARTS WITH A PARTICUALR CHARACTER.
+
+
+what the three range parameters do:
+
+The first parameter is the number to start with.
+The second parameter is the number to stop at (or rather, to stop before, since it's excluded).
+The third parameter is the step size (i.e., how large a step to take when counting up).
+
+
+range(len(word)) does? It gives us a sequence of numbers that is exactly the same as the index numbers for the string. In other words, it gives us a way to loop over the index numbers of a string. This may not seem useful yet, but we will put it to use later in this lesson!
+
+-Looping over index positions of characters must have the len keyword.
+
+As you saw above, the IndexError message happens when you're trying to use an index to access a particular item, but there is no item with that index. In the above case, the code tries to access the character at index 0, but there's no character with that index.
+
+SLICE STRING
+
+
+
+
+
+
 
 
 
