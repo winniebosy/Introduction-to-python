@@ -360,3 +360,45 @@ So the above line simply adds the line alias python='winpty python.exe' to the .
 Once you have created this permanent alieas, you should be all set and be able to run Python as shown throughout the rest of the course.
 
 
+nput and print are examples of what we would call built-in functions—that is, they are functions that are built into Python. In practical terms, this means that when you install Python, the code for these functions comes with it.
+
+The thinking is that since pretty much everyone who uses Python needs to be able to get input and print things, it makes sense to have these functions already defined and provided as part of the language.
+
+Programming languages often come with a whole set of such built-in functions, in order to make it easier to do things that you would commonly want to 
+
+
+PYTHON INTERPRETER
+You'll often see Python's interactive mode called "the interactive mode of the interpreter" or simply "the interpreter". Why? Because when you're running interactive mode, that's what you're interacting with!
+
+We haven't talked about this, but the Python interpreter is the thing that actually reads and runs your code. So when you're in interactive mode, you're interacting with the interpreter.
+
+In practical terms, you'll most often hear programming tutorials say things like "open up the Python interpreter" or "give this code a try in the interpreter". When you see that, don't get confused—they're usually just referring to interactive mode.
+
+
+
+one is Python’s way of indicating that there was no value—in this case, because the more_confused function did not return one.
+
+
+Anytime you enter a statement or expression, interactive mode will display the returned value. This lets you get a little more insight into what's happening with your code.
+
+However, this behavior can be a bit confusing when you are also using print at the same time. As an example, let's define the confuse function (that we used earlier) in interactive mode.
+
+
+
+We call things like + and / "operators" because they performs operations on the numbers.
+
+And "operand" means the thing on which the operations are performed—in this case, the numbers.
+
+
+
+TYPE ERRORS
+
+A type error is simply an error that involves the type of data being manipulated. In other words, it happens when the code is trying to do something with an object, but there’s a problem with the data type of that object.
+
+
+IMPORTING MODULES
+We have to use dot notation to indicate that the function we're calling is in the chance or whatever python module.
+
+Notice that this is the same as when we call methods from the random module. We can't just type choice() or randint()—we have to specify random.choice() and random.randint().
+
+This is called dot notation. The period . is used to say where something is located. So a line like chance.die_roll() is saying "call the die_roll() function, which is located inside the chance module."
