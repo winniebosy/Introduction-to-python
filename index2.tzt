@@ -397,6 +397,7 @@ A type error is simply an error that involves the type of data being manipulated
 
 
 IMPORTING MODULES
+
 We have to use dot notation to indicate that the function we're calling is in the chance or whatever python module.
 
 Notice that this is the same as when we call methods from the random module. We can't just type choice() or randint()—we have to specify random.choice() and random.randint().
