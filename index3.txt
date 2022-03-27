@@ -241,3 +241,40 @@ def total_length(a):
     for string in a:
         count = count + len(a)
     return count
+
+Methods on Lists [].
+
+These method modify lists but do not return values.
+A little earlier, we explored string methods. On this page, we'll explore several different list methods.
+
+Appending words(end of list)
+Inserts anew element to end of a list
+words = ["echidna", "dingo", "crocodile", "bunyip"]
+>>> words.append("platypus")
+>>> words
+['echidna', 'dingo', 'crocodile', 'bunyip', 'platypus']
+
+Extending:
+The extend keyword adds possibly several items to the end of the list.
+Modifies al list and copies another list and inserting its items at the end.Treasts a string as a list of individual characters.
+Used mainly to append a list.
+ words.extend(["Kangaroo","WALLABY"]) 
+>>> words
+['echidna', 'dingo', 'crocodile', 'bunyip', 'platypus', 'a', 'b', 'c', 'Kangaroo', 'WALLABY']
+extend keyword extends words at the end of the lsit.
+
+Reverse
+The reverse method reverses word in a string. 
+The last item in a string becomes first.
+words
+['WALLABY', 'Kangaroo', 'c', 'b', 'a', 'platypus', 'bunyip', 'crocodile', 'dingo', 'echidna']
+
+
+SORT METHODS
+it sorts words in a list to an alphabetical order.
+
+Mutable vs Immutable
+You can modify a list but you cannnot change a list. 
+The list you can do is change the string.
+mutable:changeable eg string
+immutable:unchangeable eg lists
