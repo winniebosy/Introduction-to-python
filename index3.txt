@@ -278,3 +278,354 @@ You can modify a list but you cannnot change a list.
 The list you can do is change the string.
 mutable:changeable eg string
 immutable:unchangeable eg lists
+
+
+Arguemented Assignments
+n = n + 1
+We can simply write:
+
+n += 1
+(Read this aloud as "n plus equals 1".)
+
+The effect of n = n + 1 and n += 1 is the same. The latter is called an augmented assignment statement, because it's an assignment statement but it augments the existing value rather than replacing it.
+
+he * operation on strings is used to repeat a string. You can't multiply a string by a string, but you can "multiply" a string by an integer, to repeat a string some number of times.
+
+Doing this does not break the rule that strings are immutable, because it isn't altering the contents of the string — it's replacing the value of the variable.
+
+
+Why use augmented assignment?
+Using an augmented assignment statement is slightly less typing, but there's another reason to consider using it.
+
+
+WHILE loops
+rEPEATS A SECTION of code as along the the section of code is true
+a while loop will run while some condition is True. As soon as the condition is False, the loop will stop.
+example
+n = 0
+while n < 3:
+    print(n)
+    n += 1
+
+
+In the workspace below, see if you can write a while loop that prints a countdown, like this:
+
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+
+solution
+
+n = 10
+while n > 0:
+    print(n)
+    n -= 1
+print("Blastoff!")
+
+
+Important note for Git Bash users
+If you are writing this code on your own machine and running it with Git Bash, you may (annoyingly) need to add an additional argument to all of your print statements to get them to pause as desired. For example:
+
+import time
+
+print("Hello", flush=True)
+time.sleep(1)
+print("world!", flush=True)
+
+
+import time
+
+n = 10
+while n > 0:
+    print(n, flush=True)
+    time.sleep(1)
+    n -= 1
+print("Blastoff!", flush=True)
+
+
+
+Abracadabra (using while)
+
+s = "abracadabra"
+index = len(s)
+while index > 0:
+    print(s[:index])
+    index -= 1
+
+
+   for loops automatically loop over a sequence
+OK, but why does a for loop always have to have that variable? The reason is because a for loop always loops over some sequence of items (such as a list). There's no visible assignment statement (like index = 0), but the for loop needs a variable so it can assign values to it each time the loop runs (in this case, the values are the numbers that we get from range(len(word))).
+while loops don't necessarily do either of those things
+In contrast, a while loop does not necessarily loop over a sequence, and it doesn't automatically come with a variable. If we want to do those things, we have to add lines to set them up.
+ word = "cat"
+index = 0
+while index < len(word):
+    print(word[index])
+    index += 1
+
+
+
+You'll find the original count_character function in the workspace below.
+ For practice, see if you can modify the function to use a while loop instead of a for loop.
+
+
+
+    def count_character(string, target):
+    index = 0
+    total = 0
+    while index < len(string):
+        if string[index] == target:
+            total += 1
+        index += 1
+    return total
+
+# This should return 3, since there are three "o"s:
+print(count_character("bonobo", "o"))
+
+
+
+Write a function called until_dot that takes a string argument and returns the portion of that string before the first dot character . (a.k.a., a period or full-stop).
+
+
+Solution using the while loop
+def until_dot(s):
+    index = 0
+    while index < len(s) and s[index] != '.':
+        # No dots yet, keep going.
+        index += 1
+    # We either found a dot or ran out of string.
+    return s[:index]
+
+    Solution using the four loop
+    def until_dot(s):
+    for index in range(len(s)):
+        if s[index] == '.':
+            # A dot! Return everything up to here.
+            return s[:index]
+    # We ran out of string without seeing any dots.
+    # Return the whole string.
+    return s
+
+    oth of these are examples of a technique called linear search. In a linear search, we start at the beginning of a sequence and look at each item in the sequence until we find one that matches what we're looking for. When we either find it, or run out of items, we stop
+
+
+
+If a break statement is introduced before a loop statement, the statement will break.
+example
+while True:
+    break
+    print("Help! I'm trapped in an infinite loop!")
+
+
+    A break statement will always skip to the end of the innermost while or for loop. If you have a loop inside another loop, it will only exit the inside loop!
+    hen Python runs the break statement, it skips down to the line after the end of the while loop. In the example we just looked at, that's the print statement at the end of the code:
+
+
+    The goal of this program is to ask the user for words until the user gives a repeat word—and then the program should exit and print "I've broken out of the loop!". Then it should print a list of the words the user entered.
+
+    Solution
+    words = []
+while True:
+    word = input("Tell me a word: ")
+    if word in words:
+        print("You told me that word already!")
+    words.append(word)
+    break
+
+print("I've broken out of the loop!")
+print(f"Your words were {words}")
+
+SUBSTRINGS
+SEARCH ALGORITHMS
+Substring search-an example of a search ALGORITHMS
+
+-A substring is a smaller string that is contained within a larger string.
+-Characters must occur in order. as well as punctuations
+
+
+Locating a substring
+When we search a string for substrings, we'll use index numbers to describe where the substring is found. For instance, if we search for 'ook' in 'cookbook', we'll say that it's found at positions 1 and 5. This means that if we take a slice of length 3 starting from one of these positions, we'll see that substring:
+example
+location = 5
+>>> size = 3
+>>> word[location : location+size]
+ook
+Exampleword = "Fascinating"
+>>> location = 4
+>>> size=2
+ word[location: location + size]
+'in'
+
+
+
+
+ In the workspace below, write a function, is_substring, that takes two strings and checks if the first is a substring of the second.
+ Solution
+ def is_substring(substring, string):
+    index = 0
+    while index < len(string):
+        if string[index : index + len(substring)] == substring:
+            return True
+        index += 1
+    return False
+
+
+    Using if and slicing to find substrings
+    def count_substring(string, target):
+    total = 0
+    index = 0
+    while index < len(string):
+        if string[index : index + len(target)] == target:
+            total += 1
+            index += len(target)   # <- This is the key line
+        else:
+            index += 1
+    return total
+
+
+    Locating substrings
+When we started talking about finding substrings, a few pages ago, there was one more thing that we wanted to do: find the position of a substring in a string.
+
+For instance, if we look for the string 'ook' in the string 'cookbook', we want to find out that it's located at positions 1 and 5.
+
+A locate_first function
+Let's start off with a version that just gives the location of the first instance of the substring. We'll call it locate_first.
+
+The function should find and return the first location of a substring. But if the substring is not present, it should return -1 (you'll see why we chose -1 soon).
+
+Example
+You'll find the code for the count_substring function in the workspace below. See if you can make some changes and turn it into the locate_first function.
+
+
+def locate_first(string, sub): 
+    index = 0
+    while index < len(string):
+        if string[index : index + len(sub)] == sub:
+            return index
+        else:
+            index += 1
+    return -1
+
+  A locate_all function
+  Now let's take it one step further and see if we can make a function that locates all instance of a substring.
+>>> locate_all('cookbook', 'ook')
+[1, 5]
+>>> locate_all('yesyesyes', 'yes')
+[0, 3, 6]
+>>> locate_all('the upside down', 'barb')
+[]
+eXAMPLE OF using locate_all
+def locate_all(string, sub):
+    matches = []
+    index = 0
+    while index < len(string):
+        if string[index : index + len(sub)] == sub:
+            matches.append(index)
+            index += len(sub)
+        else:
+            index += 1
+    return matches
+
+
+    
+
+The in and not in operators
+The in operator checks whether the first string is a substring of the second:
+
+>>> 'box' in 'big box of trouble'
+True
+>>> 'box' in 'abracadabra'
+False
+It can also check if an item is a member of a list:
+
+>>> 3 in [1, 2, 3, 4]
+True
+>>> 7 in [1, 2, 3, 4]
+False
+The not in operator is similar, but (as you would expect from the name) does the opposite—it checks if something is not in a string or list.
+
+>>> 3  not in [1, 2, 3, 4]
+False
+>>> 7 not in [1, 2, 3, 4]
+True
+The find method
+The find method returns the location where a substring is first found:
+
+>>> 'abracadabra'.find('cad')
+4
+If the substring is not found, then find returns -1.
+
+>>> 'abracadabra'.find('woolly mammotth')
+-1
+The count method
+The count method counts the number of non-overlapping substrings in a string:
+
+>>> 'badger badger badger mushroom'.count('bad')
+3
+>>> 'aaaa'.count('aa')
+2
+Or it can be used on lists to count the number of items in the list:
+
+>>> [1, 2, 1, 2, 3, 4, 1, 2].count(1)
+
+
+JOINING 
+write a function named breakify that takes a list of strings, and returns a single string with <br> inserted between each two strings in the list.
+lines = ["Haiku frogs in snow",
+         "A limerick came from Nantucket",
+         "Tetrametric drum-beats thrumming, Hiawathianic rhythm."]
+
+def breakify(strings):
+    return "<br>".join(strings)
+
+print(breakify(lines))
+
+What each code does is described below
+
+Creates an empty list. - output=[]
+
+
+Uses the current index number to select a character from the string.  string[index]
+
+
+Takes a character from the string and adds it to the end of the list. output.append(string[index])
+
+
+Moves on to the next index number- index+=1
+
+
+
+Second example of what each piece of code does:
+Checks if the substring starting at the current index position is 'SPAM!'.--- string[index:index+5]=='SPAM'
+
+Advances the index so that it skips over SPAM! substrings.-- index+=5
+
+
+Adds non-spam characters to the list.- output.append(string[index])
+
+
+Puts the new spam-free string together - "".join(output)
+
+
+
+Create a function called remove_substring that takes a string and removes all instances of an undesirable substring.
+
+def remove_substring(string, substring):
+    output = []
+    index = 0
+    while index < len(string):
+        if string[index:index+len(substring)] == substring:
+            index += len(substring)
+        else:
+            output.append(string[index])
+            index += 1
+    return "".join(output)
+
+
