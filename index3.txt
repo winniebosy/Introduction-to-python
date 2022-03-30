@@ -57,7 +57,7 @@ Can be looped over.
 
 Note that indexes start at 0, not 1. So the first item in a sequence would have an index of 0, while the second would have an index of 1, the third an index of 2, and so on.
 
-INDEXING IS USED TO ASSESS WHETHER A PARTICUALR STRING STARTS WITH A PARTICUALR CHARACTER.
+INDEXING IS USED TO ASSESS WHETHER A PARTICULAR STRING STARTS WITH A PARTICULAR CHARACTER.
 
 
 what the three range parameters do:
@@ -629,3 +629,42 @@ def remove_substring(string, substring):
     return "".join(output)
 
 
+You can use output.append(template[position]) to copy a character to the output variable
+
+
+
+Sample code that takes random nouns and verbs and makes sentences
+import random
+import words
+
+
+def silly_string(nouns, verbs, templates):
+    # Choose a random template.
+    template = random.choice(templates)
+
+    # We'll append strings into this list for output.
+    output = []
+
+    # Keep track of where in the template string we are.
+    index = 0
+
+    while index < len(template):
+        if template[index:index+8] == '{{noun}}':
+            # Add a random noun to the output.
+            output.append(random.choice(nouns))
+            index += 8
+        elif template[index:index+8] == '{{verb}}':
+            # Add a random verb to the output.
+            output.append(random.choice(verbs))
+            index += 8
+        else:
+            # Copy a character to the output.
+            output.append(template[index])
+            index += 1
+
+    # Join the output into a single string.
+    output = ''.join(output)
+
+    return output
+
+print(silly_string(words.nouns, words.verbs, words.templates))
