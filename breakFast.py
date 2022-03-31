@@ -9,52 +9,63 @@
 #displays the information before a user orders
 import time
 
+#function for printing messages
 def print_pause(message_to_print):
     print(message_to_print)
     time.sleep(2)
-
-print_pause("Hello! I am Bob, the Breakfast Bot.")
-print_pause("Today we have two breakfasts available.")
-print_pause("The first is waffles with strawberries and whipped cream.")
-print_pause("The second is sweet potato pancakes with butter and syrup.")
-
-        
-
-while True:
-#loop, asking the user for input over and over
-        while True:
-            user_response = input("Please place your order. Would you like waffles or pancakes?\n").lower() 
-        
-#user selects waffles or pancakes
-            if "waffles" in user_response:
-                print("Waffles it is!")
-                print("Your order will be ready shortly")
-                break
     
-            elif "pancakes" in user_response:
-                print("Pancakes it is!")
-                print("Your order will be ready shortly")
-                break
- #when response not available   
-            else:
-                print("""Sorry, Your order is currently not available.""")
-            time.sleep(2)
-            
-        while True: 
 
-          second_order= input("Would you like to place another order? Please say 'yes' or 'no: \n").lower()
+def valid_input(prompt, option1, option2):
+    while True:
+        response = input(prompt).lower() #getting user input and is case insensitive
+        #getting and assessing user response
+        if option1 in response:
+            break
+        elif option2 in response:
+             break
+        else:
+            print_pause("Sorry, I do not Understand")
+    return response
+
+
+def intro():
+   print_pause("Hello! I am Bob, the Breakfast Bot.")
+   print_pause("Today we have two breakfasts available.")
+   print_pause("The first is waffles with strawberries and whipped cream.")
+   print_pause("The second is sweet potato pancakes with butter and syrup.") 
+   
+   #getting customer order
+def get_order():
+       response = valid_input("Please place your order. "
+                              "Would you like waffles or pancakes? \n",
+                              "waffles", "pancakes")   
        
-          if "no" in second_order:
-                print("OK! Thank you.See you next time")
-                time.sleep(2)
-                break
-           
-          elif 'yes' in second_order:
-                print("Very good, I'm happy to take another order.")
-                time.sleep(2)
-          else:
-                print("I do not understand your order")
-                time.sleep(1)
-                break
-            #breaking the loop
-        
+       if "waffles" in response:
+            print_pause("Waffles it is!") 
+       elif "pancakes" in response:
+           print_pause("Pancakes it is!") 
+       print_pause("Your order will be ready shortly")
+       
+       order_again()
+
+
+def order_again():
+    response = valid_input("Would you like to place another order? "
+                           "Please enter 'yes' or 'no'.\n",
+                            "yes", "no")
+    if "no" in response:
+        print_pause("Thank you for your time")
+    elif "yes" in response:
+        print_pause("Awesome! I am happy to take another order.")
+        get_order()
+
+
+def order_breakfast():
+    intro()
+    get_order()
+    
+    
+order_breakfast()
+    
+    
+            
