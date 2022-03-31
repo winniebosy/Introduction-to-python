@@ -1,0 +1,70 @@
+Pycodestyle
+tool used to check that code follows all the python guidelines.
+
+Multi-lines Strings
+over the recommended 72-79 characters. So to make the code more readable, we need a way of splitting it to multiple lines.
+
+Multi-line strings (2/2)
+When we have separate lines of code in our code editor, Python treats them as exactly that—as separate lines of code.
+
+As we saw, it knows to do this because of the EOL character. In other words, when Python hits an EOL, it knows that the one line has ended and the next is about to begin.
+Explicit line-joining -using escape characters at the end of the 79th character.
+But we also saw we can get around that. One way to do it was using the escape character:
+
+story =  "Once upon a time there was a very long string that was \
+          over 100 characters long and could not all fit on the \
+
+          screen at once."
+print(story)
+This is called explicit line joining.
+
+
+
+Implicit line-joining
+There's also another type of line-joining that doesn't require the backslash. In Python, any expressions inside parentheses ( ) , square brackets [ ], or curly braces { } can be split over more than one line. For example, if we have a long list, we can do this:
+
+my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,
+           16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28,
+           29, 30, 31, 32, 33, 34, 35, 36, 38, 29, 40, 41, 42]
+There's no problem here; despite the EOL characters at the end of each line, Python will essentially treat these three lines the same as if they were a single line.
+
+This is called implicit line joining
+
+
+Automatic string literal concatenation
+The final piece of the puzzle here is that Python automatically concatenates any adjacent string literals, even if the concatenation operator + isn't there.
+
+For example, we can do this:
+
+>>> "foo" + "bar"
+'foobar'
+That is what we expect. But we can also leave the + out, and it will have the exact same results:
+
+>>> "foo" "bar"
+'foobar'
+
+
+The n in the code is for the new line so that when the user input is keyed in, the response 
+can move to the next line.
+name = input("What's your name?\n")
+print(f"Hello {name}!")
+
+
+
+
+It's important to remember that the input function always returns a string. If we're asking for a number and need the result as an integer, we can convert it using the int function. (And conversely, if we have a number that we need to manipulate as a string, we can convert it using the str function.).
+For instance as seen in the code below;
+n = input("What's your favorite number?\n")
+if int(n) == 7:
+    print("Mine too!")
+
+
+
+    one way to use while statement to eveluate truthy or falsy
+     user_response =""
+    while user_response != "waffles" and user_response != "pancakes" :
+   
+
+
+
+
